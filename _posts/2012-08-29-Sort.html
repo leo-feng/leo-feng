@@ -1,0 +1,212 @@
+---
+layout: default
+title: 排序算法总结
+---
+
+<h2>{{ page.title }}</h2>
+<P>
+//算法应该同时支持升序和降序a
+//算法应支持多种数据类型
+#include <stdlib.h>
+#include<string.h>
+typedef int (*DataCompareFunc)(void *ctx,void *data);
+int int_cmp(void *a,void *b)
+{
+	return (int)a-(int)b;
+}
+int int_cmp_invert(void *a,void *b)
+{
+	return (int)b-(int)a;
+}
+int char_cmp(void *a,void *b)
+{
+	return strcmp((char*)a,(char*)b);
+}
+void merge_sort_impl(void **storage,void **array,size_t low,size_t mid,size_t high,DataCompareFunc cmp)
+{	size_t i = low;
+	size_t j = low;
+	size_t k = mid; 
+	if((low+1)<mid)
+	{
+		size_t x = low + ((mid - low)>>1);
+		merge_sort_impl(storage,array,low,x,mid,cmp);
+		
+	}
+	if((mid+1)<high)
+	{
+		size_t x = mid + ((high-mid)>>1);
+		merge_sort_impl(storage,array,mid,x,high,cmp);
+	}
+	while(j<mid&&k<high)
+	{
+		if(cmp(array[j],array[k])<=0)
+		{
+			storage[i++]=array[j++];
+		}
+		else
+		{
+			storage[i++]=array[k++];
+		}
+	}
+	while(j<mid)
+	{
+		storage[i++]=array[j++];
+	}
+	while(k<high)
+	{
+		storage[i++]=array[k++];
+	}
+	for(i=low;i<high;i++)
+	{
+		array[i]=storage[i];
+	}
+
+}
+void merge_sort(void **array,size_t nr,DataCompareFunc cmp)
+{
+	void **storage=NULL;
+	if(nr>1)
+	{
+		storage = (void**)malloc(sizeof(void*)*nr);
+
+		//(*storage)=(void *)malloc(sizeof(void)*nr);//这样写可以否？
+		if(storage!=NULL)
+		{
+			merge_sort_impl(storage,array,0,nr>>1,nr,cmp);
+		}
+	}
+}
+//事实上这更像是一个选择插入排序，而不是冒泡排序，选择最大的一个，插入到对应的位置。。。。
+
+void bubble_sort(void **array,size_t nr,DataCompareFunc cmp)
+{
+	size_t i = 0;
+	size_t max = 0;
+	size_t right = 0;
+	if(nr<2)return;
+	for(right=nr-1;right>0;right--)
+	{
+		for(i=1,max=0;i<right;i++)
+		{
+			if(cmp(array[i],array[max])>0)
+			{
+				max=i;
+			}
+		}
+		if(cmp(array[max],array[right])>0)
+		{
+			void *data = array[right];
+			array[right] = array[max];
+			array[max] = data;
+		}
+	}
+}
+void select_sort(void **array,size_t nr,DataCompareFunc cmp)
+{
+	size_t i = 0;
+	size_t j = 0;
+	size_t small = 0;
+	if(nr<2)return;
+	for(i=0;i<nr-1;i++)
+	{
+		small=i;
+		for(j=i+1;j<nr;j++)
+		{	
+
+
+			if(cmp(array[small],array[j])>0)
+			{
+				small=j;
+			}
+		}
+
+		if(small!=i)
+		{
+			void *data = array[i];
+			array[i]=array[small];
+			array[small]=data;
+		}
+
+	}
+}
+void bubble_sort_1(void **a,size_t nr,DataCompareFunc cmp)
+{
+	int i=0;
+	int j=0;
+	int flag = 1;
+	for(i;i<nr-1&&flag==1;i++)
+	{
+		flag = 0;
+		for(j=0;j<nr-i-1;j++)
+		{
+			if(cmp(a[j],a[j+1])>0)
+			{
+				flag = 1;
+				void *data = a[j];
+				a[j]=a[j+1];
+				a[j+1]=data;	
+			}
+		}
+	}	
+}
+void quick_sort(void**a,size_t nr,DataCompareFunc cmp)
+{
+	if(nr>1)
+	{
+		quick_sort_impl(a,0,nr-1,cmp);
+	}
+}
+void quick_sort_impl(void **a,size_t left,size_t right,DataCompareFunc cmp)
+{
+	size_t saveleft = left;
+	size_t saveright = right;	
+	void *data=a[left];
+	while(left<right)
+	{
+		while(cmp(a[right],data)>=0&&left<right)right--;
+		if(left!=right)
+		{
+			a[left]=a[right];
+			left++;
+		}
+		while(cmp(a[left],data)<=0&&left<right)left++;
+		if(left!=right)
+		{
+			a[right]=a[left];
+			right--;
+		}
+	}
+	a[left]=data;	
+	if(saveleft<left)
+	{
+		quick_sort_impl(a,saveleft,left-1,cmp);	
+	}
+	if(saveright>left)
+	{
+		quick_sort_impl(a,left+1,saveright,cmp);
+	}
+}
+void main()
+{
+	
+	int a[]={1,3,5,2,4,6,7,10,9,8};
+	char *b[6]={"ab", "df", "se", "edffd", "chind", "qqdfg"};
+	int i =0;
+	//bubble_sort(a,10,int_cmp);
+	//bubble_sort_1(&a,10,int_cmp);
+	//quick_sort(&a,10,int_cmp);
+	//quick_sort(&a,10,int_cmp_invert);
+	//merge_sort(&a,10,int_cmp);
+	//select_sort(&a,10,int_cmp);
+	for(i;i<6;i++)
+	{
+		printf("%s\n",b[i]);
+	}
+	select_sort(b,6,char_cmp);
+	for(i=0;i<6;i++)
+	{
+		printf("%s\n",b[i]);
+	}
+}
+</p>
+<p>{{ page.date | date_to_string }}</p>
