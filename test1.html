@@ -7,6 +7,44 @@ title: leo-feng
 
 <!--<p>最新文章</p>!-->
 
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="item active">
+
+          <img src="http://distilleryimage1.ak.instagram.com/add50d18af0e11e3a9531209f41f76b1_8.jpg" lt="First slide">>
+        </div>
+
+        <div class="item">
+          <img src="http://distilleryimage8.ak.instagram.com/3cebc542af0e11e3aec11210beee93d8_8.jpg" lt="Second slide">>
+        </div>
+
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+        </div>
+
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+	
+ {% for post in site.related_posts limit:3 %}
+          <div class="col-lg-4">
+            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+            <h2>Heading</h2>
+            <p>{{ post.date | date_to_string }}raquo;</p>
+            <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
+          </div>
+          {% endfor %}
+
 <div id="home">
 
   <h1>Blog Posts</h1>
