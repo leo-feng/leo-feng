@@ -3,8 +3,11 @@ layout: giftlayout
 title: leo-feng
 ---
 
+<!-- <h2>{{ page.title }}</h2>!-->
 
-   <!-- Carousel
+<!--<p>最新文章</p>!-->
+
+<!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -16,7 +19,7 @@ title: leo-feng
 
       <div class="carousel-inner">
         <div class="item active">
-          
+
           <img src="http://distilleryimage1.ak.instagram.com/add50d18af0e11e3a9531209f41f76b1_8.jpg" lt="First slide">>
         </div>
 
@@ -33,30 +36,23 @@ title: leo-feng
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="container marketing">
 
-    <div class="container marketing">
+<div class="row">
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-          <ul class="posts">
-	{% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-    
-	{% for post in site.related_posts limit:3 %}
-          <div class="col-lg-4">
+
+    {% for post in site.posts %}
+	<div class="col-lg-4">
             <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
             <h2>Heading</h2>
             <p>{{ post.date | date_to_string }}raquo;</p>
             <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
           </div>
-          {% endfor %}
-        <!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-      <!-- START THE FEATURETTES -->
+    {% endfor %}
+
+
+</div>
+ <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
 
@@ -99,11 +95,9 @@ nsectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-
-      <!-- FOOTER -->
+<!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-
 </div>
