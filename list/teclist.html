@@ -10,7 +10,7 @@ title: leo-feng
 <div id="home">
 
   <h1>Blog Posts</h1>
-  <ul class="posts">
+  <ul class="list-unstyled">
 
     {% for post in site.posts %}
 	{% if post.style == 1 %}
@@ -24,6 +24,7 @@ title: leo-feng
       				</div>
       			</div>
       		</li>
+          <hr class="featurette-divider">
 	{% endif %}
     {% endfor %}
   </ul>
