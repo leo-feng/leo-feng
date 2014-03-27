@@ -14,7 +14,16 @@ title: leo-feng
 
     {% for post in site.posts %}
 	{% if post.style == 0 %}
-      		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      		<li>
+      			<div class = "row">
+      				<div class =“col-xs-2”>
+      			<span>{{ post.date | date_to_string }}</span> &raquo;
+      				</div>
+      				<div class =“col-xs-3”>
+      					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      				</div>
+      			</div>
+      		</li>
 	{% endif %}
     {% endfor %}
   </ul>
