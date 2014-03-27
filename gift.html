@@ -40,12 +40,18 @@ title: leo-feng
 
 <div class="row">
 
+<div class="col-lg-4">
+            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+            <h2>tec</h2>
+            <p><a href="/leo-feng/teclist.html"</a></p>
+          </div>
+
 
     {% for post in site.posts %}
 	<div class="col-lg-4">
             <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
             <h2>Heading</h2>
-            <p>{{ post.date | date_to_string }}raquo;</p>
+            <p>{{ post.date | date_to_string }}</p>
             <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
           </div>
     {% endfor %}
