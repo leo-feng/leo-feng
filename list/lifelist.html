@@ -7,7 +7,7 @@ title: leo-feng
 
 <!--<p>最新文章</p>!-->
 
-<div id="home">
+<div id="home" style = "text-align:justify">
 
   <h1>Blog Posts</h1>
   <ul class="list-unstyled">
@@ -15,14 +15,8 @@ title: leo-feng
     {% for post in site.posts %}
 	{% if post.style == 0 %}
       		<li>
-      			<div class = "row">
-      				<div class ="col-xs-2">
       			<span>{{ post.date | date_to_string }}</span> &raquo;
-      				</div>
-      				<div class ="col-xs-3">
       					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      				</div>
-      			</div>
       		</li>
 	{% endif %}
     {% endfor %}
