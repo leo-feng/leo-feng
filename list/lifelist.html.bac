@@ -7,23 +7,17 @@ title: leo-feng
 
 <!--<p>最新文章</p>!-->
 
-<div id="home">
+<div id="home" style = "text-align:justify">
 
-  <h1>Blog Posts</h1>
+  
   <ul class="list-unstyled">
 
     {% for post in site.posts %}
-	{% if post.style == 1 %}
+	{% if post.style == 0 %}
       		<li>
-      			<div class = "row">
-      				<div class = "col-xs-4">
       			<span>{{ post.date | date_to_string }}</span> &raquo;
-      				</div>
-      				<div class ="col-md-4">
       					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      				</div>
-      			</div>
-      		</4i>
+      		</li>
           <hr class="featurette-divider">
 	{% endif %}
     {% endfor %}
