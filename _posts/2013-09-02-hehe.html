@@ -4,7 +4,8 @@ title: :-)
 style: 0
 ---
 
-<h5>{{ page.title }}</h5>
+<h5>{{ page.title }}</h5><span>{{ page.date | date_to_string }}</span>
+<hr class="featurette-divider">
 <p>
 <pre>
 <xmp>
@@ -12,4 +13,4 @@ style: 0
 </xmp>
 </pre>
 </p>
-<p>{{ page.date | date_to_string }}</p>
+

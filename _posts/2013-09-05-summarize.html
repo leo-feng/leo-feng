@@ -4,7 +4,8 @@ title: svn 使用总结
 style: 1
 ---
 
-<h5>{{ page.title }}</h5>
+<h5>{{ page.title }}</h5><span>{{ page.date | date_to_string }}</span>
+<hr class="featurette-divider">
 <p>
 <pre>
 一、合并代码
@@ -34,4 +35,3 @@ style: 1
 至此线上代码更新完毕，tag添加完毕，发布包准备完毕，可通知运维进行部署
 </pre>
 </p>
-<p>{{ page.date | date_to_string }}</p>
