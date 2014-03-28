@@ -4,19 +4,12 @@ layout: default
 <div id="post">
 	{{ content }}
 </div>
-
 <hr class="featurette-divider">
-
 <div id="related" style = "text-align:justify">
-
-  <p class = "lead">Related Posts</p>
-
-  <ul class="posts list-unstyled">
-    {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-
-  </ul>
-
+	<p class = "lead">Related Posts</p>
+	<ul class="posts list-unstyled">
+		{% for post in site.related_posts limit:3 %}
+		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
 </div>
-
