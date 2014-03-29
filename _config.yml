@@ -1,3 +1,4 @@
 baseurl:  /leo-feng
 markdown: rdiscount
 pygments: true
+disqus_shortname: leo-feng
