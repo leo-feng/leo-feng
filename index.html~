@@ -51,8 +51,9 @@ title: leo-feng
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">passage <span class="text-muted">一个关于人生的游戏</span></h2>
-        <p class="lead">短短5分钟，是选择一个人轻松上路，还是两个人相伴而行，通往终点的路上，是一个人踽踽独行，还是两个人彼此搀扶，不同的方式，看到不一样的风景，获得不一样的宝藏</p>
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl co
+        nsectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         <div class="row">
           <div class="col-md-2">
             <p><a class="btn btn-primary btn-lg" href="/leo-feng/2014/03/28/passage.html" role="button">view for more</a></p>
@@ -71,8 +72,9 @@ title: leo-feng
         <img class="featurette-image img-responsive center" src="/leo-feng/docs-assets/game/liwu.png" style="margin-left:auto;margin-right:auto;">
       </div>
       <div class="col-md-7">
-        <h2 class="featurette-heading">gift·礼物<span class="text-muted">送给别人的是礼，送给自己的是品</span></h2>
-        <p class="lead">中国人送礼不仅仅是看中礼品本身的价值，更重要的时人在其中的心境和寄托，礼品指南，助你送出最好的口味，最好的格调和最好的心意</p>
+        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl co
+        nsectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         <div class="row">
           <div class="col-md-2">
             <p><a class="btn btn-primary btn-lg" href="/leo-feng/2014/03/27/gift.html" role="button">view for more</a></p>
@@ -85,8 +87,8 @@ title: leo-feng
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">毕业衫<span class="text-muted">兔年的兔斯基</span></h2>
-        <p class="lead">看着大家穿着自己的设计的衣服毕业，还是很有成就感的，3年前的2011，我们就这样，各自奔天涯</p>
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         <div class="row">
           <div class="col-md-2">
             <p><a class="btn btn-primary btn-lg" href="/leo-feng/2014/04/03/tshirt.html" role="button">view for more</a></p>
