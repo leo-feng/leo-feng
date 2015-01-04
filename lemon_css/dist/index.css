@@ -48,13 +48,13 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   background-color: #777;
-  align:center
+  height:100%;
 }
 .carousel-inner > .item > img {
   position: relative;
   top: 0;
+  height:100%;
   left: 0;
-  align:center;
 }
 
 
