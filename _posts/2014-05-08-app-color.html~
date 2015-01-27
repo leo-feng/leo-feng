@@ -1,8 +1,0 @@
----
-layout: post
-title: 毕业衫
-style: 4
----
-<h5>{{ page.title }}</h5><small>{{ page.date | date_to_string }}</small>
-<hr class="featurette-divider">
-app 设计颜色搭配
