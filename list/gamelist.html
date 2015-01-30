@@ -1,0 +1,27 @@
+---
+layout: teclayout
+title: leo-feng
+---
+<!-- <h2>{{ page.title }}</h2>!-->
+<!--<p>最新文章</p>!-->
+<script>document.getElementById("lemon_life").className = " "</script>
+<script>document.getElementById("lemon_work").className = "active"</script>
+<div id="home">
+  <ul class="list-unstyled">
+    {% for post in site.posts %}
+    {% if post.style == 2 %}
+    <li>
+      <div class = "row">
+        <div class = "col-xs-4">
+          <span>{{ post.date | date_to_string }}</span> &raquo;
+        </div>
+        <div class ="col-md-4">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </div>
+      </div>
+      </4i>
+      <hr class="featurette-divider">
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
