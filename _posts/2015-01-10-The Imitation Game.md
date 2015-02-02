@@ -2,7 +2,7 @@
 
 layout: post
 title: The Imitation Game
-style: 1
+style: 0
 
 ---
 
